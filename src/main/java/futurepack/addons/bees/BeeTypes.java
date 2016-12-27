@@ -1,9 +1,12 @@
-package futurepack.addons.bees;
+/*package futurepack.addons.bees;
 
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map.Entry;
+
+import org.apache.commons.lang3.text.WordUtils;
 
 import forestry.api.apiculture.BeeManager;
 import forestry.api.apiculture.EnumBeeChromosome;
@@ -17,6 +20,8 @@ import forestry.api.core.EnumTemperature;
 import forestry.api.genetics.AlleleManager;
 import forestry.api.genetics.IAllele;
 import forestry.api.genetics.IClassification;
+import forestry.core.genetics.alleles.AlleleHelper;
+import futurepack.addons.common.FPForestryAddon;
 import futurepack.addons.items.CombTypes;
 import futurepack.addons.items.FPFAItems;
 import net.minecraft.item.Item;
@@ -50,10 +55,13 @@ public class BeeTypes
 	public static final BeeTypes Nanobite = new BeeNanobite("Nanobite", 0x8bb1da, 0xffd606).setCyber(true).addSpecial(new ItemStack(tools,1,13), 0.20F).addSpecial(new ItemStack(tools,1,14), 0.10F);				//Product : Custom Comb (2%)
 	
 	
+	
+	
+	
 	public static void registerBees()
 	{
 		IBeeFactory fac = BeeManager.beeFactory;
-		
+		IBeeFactory cyber_fac = new CyberBeeFactory();
 //		IBeeIconProvider fpIconProvider = new IBeeIconProvider()
 //		{
 //			IIcon body1;
@@ -109,12 +117,14 @@ public class BeeTypes
 		AlleleManager.alleleRegistry.getClassification("family.apidae").addMemberGroup(cyber);
 		
 		
-		
 		for(BeeTypes type : list)
 		{
 			type.branch=type.isCyber ? cyber : nature;
-			type.allele = fac.createSpecies(type.uid, type.dominant, type.authority, type.unlocalizedName, type.unlocalizedDescription, type.branch, type.binomial, type.primaryColor, type.secondaryColor);
-//			AlleleManager.alleleRegistry.registerAllele(type.allele);
+			if(type.isCyber)
+				type.allele = cyber_fac.createSpecies(type.uid, type.dominant, type.authority, type.unlocalizedName, type.unlocalizedDescription, type.branch, type.binomial, type.primaryColor, type.secondaryColor);
+			else
+				type.allele = fac.createSpecies(type.uid, type.dominant, type.authority, type.unlocalizedName, type.unlocalizedDescription, type.branch, type.binomial, type.primaryColor, type.secondaryColor);
+			//			AlleleManager.alleleRegistry.registerAllele(type.allele);
 			if(type.isCyber)
 			{
 //				type.allele.setCustomBeeIconProvider(fpIconProvider);
@@ -147,7 +157,7 @@ public class BeeTypes
 	protected IAlleleBeeSpecies bee;
 	
 	public BeeTypes(String name, int firstCol, int secondCol)
-	{
+	{/*
 		this.uid = "forestry.species"+name;
 		this.unlocalizedName = "fpf.bees.species."+name.toLowerCase();
 		this.unlocalizedDescription = this.unlocalizedName + ".desc";
@@ -157,6 +167,24 @@ public class BeeTypes
 		this.binomial = Integer.toHexString((this.primaryColor & this.secondaryColor));
 		
 		list.add(this);
+		*/
+	/*	
+		String lowercaseName = this.toString().toLowerCase(Locale.ENGLISH);
+		String species = "species" + WordUtils.capitalize(lowercaseName);
+
+		String ID = FPForestryAddon.modID + '.' + species;
+		String description = FPForestryAddon.modID + ".description." + species;
+		String name = "for.bees.species." + lowercaseName;
+
+		this.branch = branch;
+		IAlleleBeeSpeciesBuilder speciesBuilder = BeeManager.beeFactory.createSpecies(ID, dominant, "Lach_01298", name, description, branch.getBranch(), binomial, primary.getRGB(), secondary.getRGB());
+		if(isSecret())
+		{
+			speciesBuilder.setIsSecret();
+		}
+		setSpeciesProperties(speciesBuilder);
+		this.species = speciesBuilder.build();
+		
 	}
 	
 	public BeeTypes setCyber(boolean isCyber)
@@ -251,10 +279,10 @@ public class BeeTypes
 	public IAllele[] getChromosomes()
 	{
 		IAllele[] array = new IAllele[13];
-		bee = allele.build();
+		//bee = allele.build();
 		array[EnumBeeChromosome.SPECIES.ordinal()] = getAllele();
 		
 		return array;
 	}
 
-}
+}*/

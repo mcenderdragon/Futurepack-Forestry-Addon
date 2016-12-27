@@ -64,7 +64,7 @@ public class BlockHive extends Block
 	    
 	    Random random = (world instanceof World) ? ((World)world).rand : RANDOM;
 	    
-	    HiveMenelaus drop = HiveMenelaus.hiveMenelaus;
+	    /*HiveMenelaus drop = HiveMenelaus.hiveMenelaus;
 	    int tries = 0;
 		boolean hasPrincess = false;
 		
@@ -97,7 +97,7 @@ public class BlockHive extends Block
 		{
 			drops.addAll(drop.getExtraItems(world, pos, fortune));
 		}
-	    
+	    */
 	    return drops;
 		
 		

@@ -1,4 +1,4 @@
-package futurepack.addons.bees;
+/*package futurepack.addons.bees;
 
 import forestry.api.apiculture.EnumBeeChromosome;
 import forestry.api.genetics.IAllele;
@@ -33,3 +33,4 @@ public class BeeKonstruction extends BeeRobotic
 		return array;
 	}
 }
+*/

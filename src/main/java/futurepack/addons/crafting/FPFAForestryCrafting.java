@@ -14,7 +14,7 @@ public class FPFAForestryCrafting {
 
 	public static void setup() 
 	{
-ISqueezerManager sqee = RecipeManagers.squeezerManager;
+		ISqueezerManager sqee = RecipeManagers.squeezerManager;
 		
 		Item erse = (Item) Item.REGISTRY.getObject(new ResourceLocation("fp:erse"));
 		if(erse==null)

@@ -4,7 +4,7 @@ import forestry.api.apiculture.EnumBeeChromosome;
 import forestry.api.genetics.IAllele;
 import futurepack.addons.common.FlowerTypes;
 
-public class BeeMetalic extends BeeTypes
+/*public class BeeMetalic extends BeeTypes
 {
 
 	public BeeMetalic(String name, int firstCol, int secondCol)
@@ -32,4 +32,4 @@ public class BeeMetalic extends BeeTypes
 		
 		return array;
 	}
-}
+}*/

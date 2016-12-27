@@ -1,22 +1,10 @@
 package futurepack.addons.crafting;
 
-import java.lang.reflect.Method;
-
-import forestry.api.apiculture.BeeManager;
-import forestry.api.apiculture.EnumBeeType;
-import forestry.api.genetics.IIndividual;
-import futurepack.addons.bees.BeeTypes;
-import net.minecraft.init.Items;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.oredict.OreDictionary;
-
 public class FPFAFuturepackCrafting 
 {
 	public static void setup()
 	{
-		try
+		/*try
 		{
 			Method m_addAssemblyRecipe;
 			Class c = Class.forName("futurepack.depend.api.RegistryCollection");
@@ -46,6 +34,6 @@ public class FPFAFuturepackCrafting
 		catch(Exception e)
 		{
 			e.printStackTrace();
-		}
+		}*/
 	}
 }

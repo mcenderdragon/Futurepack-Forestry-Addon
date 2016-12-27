@@ -1,0 +1,8 @@
+{
+    "parent": "forestry:item/mirror_hands",
+    "textures": {
+        "layer0": "forestry:items/bees/cyber/queen.outline",
+		"layer1": "forestry:items/bees/cyber/body1",
+		"layer2": "forestry:items/bees/cyber/queen.body2"
+    }
+}

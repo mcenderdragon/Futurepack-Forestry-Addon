@@ -1,4 +1,4 @@
-package futurepack.addons.bees;
+/*package futurepack.addons.bees;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -152,4 +152,4 @@ public class BreedingManager
 		}
 		return null;
 	}
-}
+}*/
