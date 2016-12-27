@@ -33,3 +33,12 @@ fpf.bees.species.inteligent=Inteligend
 fpf.bees.species.nanobite=Nanobite
 
 tile.menelaus.name=Menelaus Hive
+
+item.for.bee.modifier.flowering=Flowering: %sx
+item.for.bee.modifier.lifepsan=Lifepsan: %sx
+item.for.bee.modifier.mutation=Mutation: %sx
+item.for.bee.modifier.territory=Territorry: %sx
+item.for.bee.modifier.sealed=Sealed: %s
+item.for.bee.modifier.selflighted=Self Lighted: %s
+item.for.bee.modifier.sunlight.simulated=Simulated Sunlight: %s
+item.for.bee.modifier.hellish=Hellish: %s

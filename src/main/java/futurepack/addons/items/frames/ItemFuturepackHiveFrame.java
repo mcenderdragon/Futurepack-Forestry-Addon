@@ -1,11 +1,15 @@
 package futurepack.addons.items.frames;
 
+import java.util.List;
+
 import forestry.api.apiculture.IBee;
 import forestry.api.apiculture.IBeeGenome;
 import forestry.api.apiculture.IBeeHousing;
 import forestry.api.apiculture.IBeeModifier;
 import forestry.api.apiculture.IHiveFrame;
+import forestry.core.utils.Translator;
 import futurepack.addons.common.FPForestryAddon;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
@@ -27,83 +31,66 @@ public class ItemFuturepackHiveFrame extends Item implements IHiveFrame, IBeeMod
 		this.setUnlocalizedName("frame."+type.name);
 	}
 	
-//	@Override
-//	public void registerIcons(IIconRegister r)
-//	{
-//		this.itemIcon = r.registerIcon(FPForestryAddon.ID + ":frame"+type.name);
-//	}
-	
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getTerritoryModifier(IBeeGenome genome, float currentModifier)
 	{
 		return type.territoryMod;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getMutationModifier(IBeeGenome genome, IBeeGenome mate, float currentModifier) 
 	{
 		return type.mutationMod;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getLifespanModifier(IBeeGenome genome, IBeeGenome mate, float currentModifier)
 	{
 		return type.lifespanMod;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getProductionModifier(IBeeGenome genome, float currentModifier)
 	{
 		return type.productionMod;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getFloweringModifier(IBeeGenome genome, float currentModifier)
 	{
 		return type.floweringMod;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public float getGeneticDecay(IBeeGenome genome, float currentModifier)
 	{
 		return type.geneticDecay;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public boolean isSealed()
 	{
 		return type.isSealed;
 	}
-
-//	@Optional.Method(modid="Forestry")
+	
 	@Override
 	public boolean isSelfLighted()
 	{
 		return type.isSelfLighted;
 	}
-
-//	@Optional.Method(modid="Forestry")
+	
 	@Override
 	public boolean isSunlightSimulated()
 	{
 		return type.isSunlightSimulated;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public boolean isHellish()
 	{
 		return type.isHellish;
 	}
 
-//	@Optional.Method(modid="Forestry")
 	@Override
 	public ItemStack frameUsed(IBeeHousing housing, ItemStack frame, IBee queen, int wear)
 	{
@@ -122,5 +109,27 @@ public class ItemFuturepackHiveFrame extends Item implements IHiveFrame, IBeeMod
 	{
 		return this;
 	}
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced)
+	{
+		addInformation(getBeeModifier(), tooltip);
+		super.addInformation(stack, playerIn, tooltip, advanced);
+	}
 
+	
+	private static void addInformation(IBeeModifier mod, List<String> tooltip)
+	{
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.production", mod.getProductionModifier(null, 1F)));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.genetic.decay", mod.getGeneticDecay(null, 1F)));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.flowering", mod.getFloweringModifier(null, 1F)));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.lifepsan", mod.getLifespanModifier(null,null, 1F)));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.mutation", mod.getMutationModifier(null,null, 1F)));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.territory", mod.getTerritoryModifier(null, 1F)));
+		
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.sealed", mod.isSealed()));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.selflighted", mod.isSelfLighted()));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.sunlight.simulated", mod.isSunlightSimulated()));
+		tooltip.add(Translator.translateToLocalFormatted("item.for.bee.modifier.hellish", mod.isHellish()));
+	}
 }
