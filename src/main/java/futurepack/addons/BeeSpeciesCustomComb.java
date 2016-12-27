@@ -1,4 +1,4 @@
-package futurepack.addons.bees;
+package futurepack.addons;
 //package futurepack.addons;
 //
 //import java.util.Map;

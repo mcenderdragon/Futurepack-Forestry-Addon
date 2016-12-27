@@ -9,9 +9,11 @@ import futurepack.addons.items.frames.ItemFuturepackHiveFrame;
 import futurepack.addons.items.frames.ItemPrincessFrame;
 import futurepack.addons.items.frames.ItemRetiumFrame;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemMeshDefinition;
 import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -85,16 +87,15 @@ public class FPFAItems
 		{
 			e.printStackTrace();
 		}
-//		ItemMeshDefinition def = new ItemMeshDefinition()
-//		{		
-//			@Override
-//			public ModelResourceLocation getModelLocation(ItemStack stack)
-//			{
-//				return new ModelResourceLocation(FPMain.modID +":items/dust", "inventory");
-//			}
-//		};
-		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(dust, def);
-//		ModelLoader.setCustomMeshDefinition(dust, def);
+		ItemMeshDefinition def = new ItemMeshDefinition()
+		{		
+			@Override
+			public ModelResourceLocation getModelLocation(ItemStack stack)
+			{
+				return new ModelResourceLocation(FPForestryAddon.modID +":items/comb", "inventory");
+			}
+		};
+		ModelLoader.setCustomMeshDefinition(specialCombs, def);
 	}
 	
 	@SideOnly(Side.CLIENT)
