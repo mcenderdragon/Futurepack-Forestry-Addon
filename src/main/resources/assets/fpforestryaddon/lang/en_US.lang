@@ -1,0 +1,35 @@
+itemGroup.tab.fp=Futurepack Frames
+
+item.frame.iron.name=Iron Frame
+item.frame.neon.name=Neon Frame
+item.frame.retium.name=Retium Frame
+item.frame.glowtit.name=Glowtite Frame
+item.frame.bioterium.name=Bioterium Frame
+item.frame.prinzess.name=Hatching Frame
+item.frame.prinzess.empty.name=Empty Hatching Frame
+item.frame.impirial.name=Impirial Frame
+item.comb.neon.name=Neon Comb
+item.comb.retium.name=Retium Comb
+item.comb.glowtit.name=Glowtit Comb
+item.comb.bioterium.name=Bioterium COmb
+item.comb.alutin.name=Alutin Comb
+item.comb.magnetic.name=Magnetic Comb
+
+fpf.bees.species.menelaus=Menelaus
+fpf.bees.species.modern=Modern
+fpf.bees.species.neon=Neon
+fpf.bees.species.retium=Retium
+fpf.bees.species.glowtit=Glowtite
+fpf.bees.species.bioterium=Bioterium
+fpf.bees.species.alutin=Alutin
+fpf.bees.species.magnet=Magnetic
+fpf.bees.species.metalic=Metalic
+fpf.bees.species.cybren=Cybren
+fpf.bees.species.futuristic=Futuristic
+fpf.bees.species.robotic=Robotic
+fpf.bees.species.neural=Neural
+fpf.bees.species.konstruktion=Konstruktion
+fpf.bees.species.inteligent=Inteligend
+fpf.bees.species.nanobite=Nanobite
+
+tile.menelaus.name=Menelaus Hive
