@@ -26,7 +26,6 @@ public class ProxyBase {
 		FPFAFuturepackCrafting.setup();
 		
 		FlowerTypes.registerFlowers();
-		//BeeTypes.registerBees();	
 		PotionManager.register();
 		BeeSpecies.initBees();
 		

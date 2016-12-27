@@ -8,15 +8,39 @@ import forestry.api.apiculture.EnumBeeChromosome;
 import forestry.api.genetics.IAllele;
 import forestry.api.genetics.IClassification;
 import forestry.apiculture.genetics.alleles.AlleleEffect;
+import forestry.apiculture.genetics.alleles.AlleleFlowers;
 import forestry.core.genetics.IBranchDefinition;
 import forestry.core.genetics.alleles.AlleleHelper;
 import forestry.core.genetics.alleles.EnumAllele;
 
 public enum BeeBranches implements IBranchDefinition 
 {
-	Menelaus("Menelaus")
+	MENELAUS("Menelaus")
 	{
-		
+		@Override
+		protected void setBranchProperties(IAllele[] alleles) 
+		{		
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.FLOWER_PROVIDER, EnumAllele.Flowers.CACTI);			
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.NEVER_SLEEPS, false);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.CAVE_DWELLING, false);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.HUMIDITY_TOLERANCE, EnumAllele.Tolerance.NONE);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.TEMPERATURE_TOLERANCE, EnumAllele.Tolerance.DOWN_2);	
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.TERRITORY, EnumAllele.Territory.LARGER);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.EFFECT, AlleleEffect.effectNone);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.FERTILITY, EnumAllele.Fertility.NORMAL);
+		}
+	},	
+	CYBER("cyber")
+	{
+		@Override
+		protected void setBranchProperties(IAllele[] alleles) 
+		{		
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.FLOWER_PROVIDER, EnumAllele.Flowers.GOURD);			
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.NEVER_SLEEPS, true);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.CAVE_DWELLING, true);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.HUMIDITY_TOLERANCE, EnumAllele.Tolerance.BOTH_1);
+			AlleleHelper.instance.set(alleles, EnumBeeChromosome.TEMPERATURE_TOLERANCE, EnumAllele.Tolerance.BOTH_1);			
+		}
 	};
 
 	private IClassification branch;

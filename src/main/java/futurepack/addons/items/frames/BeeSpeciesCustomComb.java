@@ -1,4 +1,4 @@
-package futurepack.addons;
+package futurepack.addons.items.frames;
 //package futurepack.addons;
 //
 //import java.util.Map;

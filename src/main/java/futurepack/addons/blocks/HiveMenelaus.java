@@ -1,16 +1,24 @@
 package futurepack.addons.blocks;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Random;
 
+import forestry.api.apiculture.BeeManager;
 import forestry.api.apiculture.IBee;
 import forestry.api.apiculture.IHiveDrop;
+import forestry.api.apiculture.hives.HiveManager;
 import forestry.api.apiculture.hives.IHiveDescription;
 import forestry.api.apiculture.hives.IHiveGen;
 import forestry.api.core.EnumHumidity;
 import forestry.api.core.EnumTemperature;
+import futurepack.addons.bees.BeeSpecies;
+import futurepack.addons.common.FPForestryAddon;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -19,72 +27,7 @@ import net.minecraft.world.biome.Biome;
 public class HiveMenelaus implements IHiveDescription, IHiveDrop
 {
 
-	@Override
-	public IBee getBeeType(IBlockAccess world, BlockPos pos) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Collection<ItemStack> getExtraItems(IBlockAccess world, BlockPos pos, int fortune) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public double getChance(IBlockAccess world, BlockPos pos, int fortune) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getIgnobleChance(IBlockAccess world, BlockPos pos, int fortune) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public IHiveGen getHiveGen() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public IBlockState getBlockState() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isGoodBiome(Biome biome) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isGoodHumidity(EnumHumidity humidity) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isGoodTemperature(EnumTemperature temperature) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public float getGenChance() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void postGen(World world, Random rand, BlockPos pos) {
-		// TODO Auto-generated method stub
-		
-	}
-/*	public static HiveMenelaus hiveMenelaus = new HiveMenelaus("menelaus",(Block) Block.REGISTRY.getObject(new ResourceLocation("fp:sand")));
+	public static HiveMenelaus hiveMenelaus = new HiveMenelaus("menelaus",(Block) Block.REGISTRY.getObject(new ResourceLocation("fp:sand")));
 	
 	private final String name;
 	
@@ -149,7 +92,7 @@ public class HiveMenelaus implements IHiveDescription, IHiveDrop
 	@Override
 	public IBee getBeeType(IBlockAccess world, BlockPos pos)
 	{
-		IBee bee = BeeManager.beeRoot.templateAsIndividual(BeeTypes.Menelaus.getChromosomes());
+		IBee bee = BeeManager.beeRoot.templateAsIndividual(BeeSpecies.MENELAUS.getTemplate());
 		return bee;
 	}
 
@@ -180,5 +123,4 @@ public class HiveMenelaus implements IHiveDescription, IHiveDrop
 
 	@Override
 	public void postGen(World world, Random rand, BlockPos pos) { }
-	*/
 }

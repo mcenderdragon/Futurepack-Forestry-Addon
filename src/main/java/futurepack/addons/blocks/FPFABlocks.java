@@ -7,10 +7,10 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class FPFABlocks
 {
-	//public final static Block hiveBlock = new BlockHive(HiveMenelaus.hiveMenelaus).setHardness(1F).setResistance(2F).setUnlocalizedName("hive_menelaus");
+	public final static Block hiveBlock = new BlockHive(HiveMenelaus.hiveMenelaus).setHardness(1F).setResistance(2F).setUnlocalizedName("hive_menelaus");
 	
 	public static void register()
 	{
-		//GameRegistry.register(hiveBlock, new ResourceLocation(FPForestryAddon.modID, hiveBlock.getUnlocalizedName()));
+		GameRegistry.register(hiveBlock, new ResourceLocation(FPForestryAddon.modID, hiveBlock.getUnlocalizedName()));
 	}
 }

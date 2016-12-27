@@ -19,8 +19,6 @@ public class FPForestryAddon
 	public static final String modName = "Futurebees";
 	public static final String modVersion = "4.1";
 	
-	public BeeSpecies b = BeeSpecies.CYBERN;
-	
 	@Instance(FPForestryAddon.modID)
 	public static FPForestryAddon instance;
 	
@@ -28,9 +26,6 @@ public class FPForestryAddon
 	public static ProxyBase proxy;
 	
 	public static CreativeTabFPFA tab = new CreativeTabFPFA();
-	
-	private static Item combs = (Item) Item.REGISTRY.getObject(new ResourceLocation("Forestry:beeCombs"));
-	public static Item tools = (Item) Item.REGISTRY.getObject(new ResourceLocation("fp:spaceship"));
 	
 	@EventHandler
     public void preInit(FMLPreInitializationEvent event) 

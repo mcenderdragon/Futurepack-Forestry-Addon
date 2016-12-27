@@ -1,3 +1,4 @@
+package futurepack.addons.deprecated;
 /*package futurepack.addons.bees;
 
 

@@ -1,4 +1,4 @@
-package futurepack.addons.bees;
+package futurepack.addons.deprecated;
 
 import forestry.api.apiculture.EnumBeeChromosome;
 import forestry.api.genetics.IAllele;

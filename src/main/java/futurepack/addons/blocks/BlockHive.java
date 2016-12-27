@@ -64,7 +64,7 @@ public class BlockHive extends Block
 	    
 	    Random random = (world instanceof World) ? ((World)world).rand : RANDOM;
 	    
-	    /*HiveMenelaus drop = HiveMenelaus.hiveMenelaus;
+	    HiveMenelaus drop = HiveMenelaus.hiveMenelaus;
 	    int tries = 0;
 		boolean hasPrincess = false;
 		
@@ -97,50 +97,8 @@ public class BlockHive extends Block
 		{
 			drops.addAll(drop.getExtraItems(world, pos, fortune));
 		}
-	    */
+
 	    return drops;
-		
-		
-//		ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
-//
-//
-//		HiveMenelaus drop = HiveMenelaus.hiveMenelaus;
-//
-////		Collections.shuffle(dropList);
-//		// Grab a princess
-//		
-//		while (tries <= 10 && !hasPrincess)
-//		{
-//			tries++;
-//
-////			for (IHiveDrop drop : dropList) 
-//			{
-//				if (random.nextInt(100) < drop.getChance(world, pos, fortune))
-//				{
-//					ret.add(drop.getPrincess(world, x, y, z, fortune));
-//					hasPrincess = true;
-//				}
-//			}
-//		}
-//
-//		// Grab drones
-////		for (IHiveDrop drop : dropList)
-//		{
-//			if (random.nextInt(100) < drop.getChance(world, x, y, z))
-//			{
-//				ret.addAll(drop.getDrones(world, x, y, z, fortune));
-//			}
-//		}
-//		// Grab anything else on offer
-////		for (IHiveDrop drop : dropList)
-//		{
-//			if (random.nextInt(100) < drop.getChance(world, x, y, z))
-//			{
-//				ret.addAll(drop.getAdditional(world, x, y, z, fortune));
-//			}
-//		}
-//
-//		return drops;
 	}
 
 	// / CREATIVE INVENTORY
