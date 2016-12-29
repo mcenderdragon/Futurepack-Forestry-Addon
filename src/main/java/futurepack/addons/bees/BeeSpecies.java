@@ -61,6 +61,30 @@ public enum BeeSpecies implements IBeeDefinition
 		}
 	},
 	
+	MODERN(BeeBranches.MENELAUS, "Modern", true, new Color(0x55463c), new Color(0x6c7d95))
+	{
+		@Override
+		protected void setSpeciesProperties(IAlleleBeeSpeciesBuilder beeSpecies)
+		{
+			beeSpecies.addProduct(new ItemStack(combs,1,3), 0.2F);
+			beeSpecies.setHumidity(EnumHumidity.NORMAL);
+			beeSpecies.setTemperature(EnumTemperature.NORMAL);
+		}
+
+		@Override
+		protected void setAlleles(IAllele[] template)
+		{
+			AlleleHelper.instance.set(template, EnumBeeChromosome.SPEED, EnumAllele.Speed.SLOW);
+			AlleleHelper.instance.set(template, EnumBeeChromosome.LIFESPAN, EnumAllele.Lifespan.NORMAL);
+			AlleleHelper.instance.set(template, EnumBeeChromosome.FLOWERING, EnumAllele.Flowering.SLOWEST);
+		}
+
+		@Override
+		protected void registerMutations()
+		{
+		}
+	},
+	
 	CYBERN(BeeBranches.CYBER, "Cybern", true, new Color(0x7d838e), new Color(0xbbeade))
 	{
 		@Override
